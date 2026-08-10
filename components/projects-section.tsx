@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Code2, ImageIcon, Terminal } from 'lucide-react'
 import { myProjects } from '@/data/projects'
 
 export function ProjectsSection() {
@@ -21,9 +21,46 @@ export function ProjectsSection() {
               key={project.id}
               className="group flex flex-col overflow-hidden rounded-xl glass glow-hover"
             >
+              {project.imageUrl ? (
+                <div className="relative flex aspect-video w-full overflow-hidden border-b border-border/20">
+                  <img
+                    src={project.imageUrl}
+                    alt={`Preview of ${project.title}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {project.inDevelopment && (
+                    <div className="absolute left-4 top-4 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm backdrop-blur-md">
+                      En Desarrollo
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="relative flex aspect-video w-full items-center justify-center border-b border-border/10 bg-secondary/10 overflow-hidden">
+                  {/* Subtle pattern for the background */}
+                  <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+                  {project.inDevelopment ? (
+                    <div className="relative flex flex-col items-center gap-3 text-muted-foreground">
+                      <Terminal className="h-10 w-10 text-primary/70" />
+                      <span className="font-mono text-sm uppercase tracking-wider text-primary/90 font-medium">En Desarrollo</span>
+                    </div>
+                  ) : (
+                    <div className="relative flex flex-col items-center gap-3 text-muted-foreground/40">
+                      <ImageIcon className="h-10 w-10" />
+                      <span className="font-mono text-xs tracking-wider">Sin vista previa</span>
+                    </div>
+                  )}
+                </div>
+              )}
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
+                  {project.duration && (
+                    <span className="text-xs font-medium text-muted-foreground bg-secondary/50 px-2 py-1 rounded-md w-fit">
+                      {project.duration}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
 

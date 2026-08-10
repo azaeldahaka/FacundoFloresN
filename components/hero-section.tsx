@@ -46,7 +46,7 @@ export function HeroSection() {
 
           <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-4 border-t border-border pt-6 font-mono">
             {[
-              ['4+', 'Proyectos entregados'],
+              ['2', 'Proyectos entregados'],
               ['23', 'Años'],
               ['Salta, AR', 'Ubicación'],
             ].map(([value, label]) => (
