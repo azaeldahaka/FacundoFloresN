@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Github } from 'lucide-react'
 import { myProjects } from '@/data/projects'
 
 export function ProjectsSection() {
@@ -38,17 +38,30 @@ export function ProjectsSection() {
                   ))}
                 </ul>
 
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-colors hover:text-primary"
-                  >
-                    Ver en Producción
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                )}
+                <div className="mt-5 flex items-center gap-6">
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-colors hover:text-primary"
+                    >
+                      Ver en Producción
+                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-colors hover:text-primary"
+                    >
+                      Ver en GitHub
+                      <Github className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}

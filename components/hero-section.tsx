@@ -71,16 +71,11 @@ export function HeroSection() {
               aria-hidden="true"
               className="absolute inset-6 rounded-[2rem] bg-primary/20 blur-2xl"
             />
-            {/* Hexagon clip frame */}
-            <div
-              className="absolute inset-4 overflow-hidden border border-primary/40 bg-card glow-ring"
-              style={{
-                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-              }}
-            >
+            {/* Circular frame */}
+            <div className="absolute inset-4 overflow-hidden rounded-full border border-primary/40 bg-card glow-ring">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/FacuFotoPerfil1.jpg"
+                src="/FacuFotoPerfilCanva-v1.jpg"
                 alt="Retrato de Facundo, desarrollador Full-Stack"
                 className="h-full w-full object-cover"
               />

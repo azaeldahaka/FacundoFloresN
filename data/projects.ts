@@ -4,6 +4,7 @@ export type Project = {
   description: string
   techStack: string[]
   url?: string
+  githubUrl?: string
 }
 
 export const myProjects: Project[] = [
@@ -14,26 +15,15 @@ export const myProjects: Project[] = [
       "Configuración de dominio y gestión de stock para plataforma de e-commerce desplegada en producción.",
     techStack: ["React 18", "TypeScript", "Vercel"],
     url: "https://aromaas-decants.vercel.app",
+    githubUrl: "https://github.com/azaeldahaka/AromaasDecants",
   },
   {
     id: "2",
-    title: "Banquito Bebidas",
+    title: "Hotel Horizonte",
     description:
-      "Diseño y configuración de aplicación móvil enfocada en la gestión operativa del negocio.",
-    techStack: ["AppSheet", "Mobile"],
-  },
-  {
-    id: "3",
-    title: "Sistema de Gestión de Turnos",
-    description:
-      "MVP desarrollado para automatizar y gestionar reservas, apuntando a optimizar el tiempo de atención.",
-    techStack: ["FilamentPHP", "SQL", "Python"],
-  },
-  {
-    id: "4",
-    title: "Bicicletería SantyBike",
-    description:
-      "Gestión de perfil comercial, posicionamiento y modificaciones de mapas para negocio local.",
-    techStack: ["SEO Local", "Business Management"],
+      "Sistema de Gestión Hotelera Full Stack. Aplicación web integral para administración y operación de reservas, evitando solapamientos. Cuenta con autenticación híbrida, roles, protección RLS en Supabase y dashboard estadístico en tiempo real.",
+    techStack: ["React 18", "TypeScript", "Tailwind CSS", "Supabase", "Recharts"],
+    url: "https://horizontesuites.netlify.app/",
+    githubUrl: "https://github.com/azaeldahaka/Hotel-Horizonte-Suites",
   },
 ]
