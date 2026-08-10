@@ -29,7 +29,7 @@ export const myProjects: Project[] = [
     url: "https://aromaas-decants.vercel.app",
     githubUrl: "https://github.com/azaeldahaka/AromaasDecants",
     duration: "Abril 2026 - Mayo 2026",
-    imageUrl: "/AromaasDecants.png",
+    imageUrl: "/projects/AromaasDecants.png",
   },
   {
     id: "2",
@@ -40,6 +40,6 @@ export const myProjects: Project[] = [
     url: "https://horizontesuites.netlify.app/",
     githubUrl: "https://github.com/azaeldahaka/Hotel-Horizonte-Suites",
     duration: "Diciembre 2025 (1 mes)",
-    imageUrl: "/HorizonteSuites.png",
+    imageUrl: "/projects/HorizonteSuites.png",
   },
 ]
