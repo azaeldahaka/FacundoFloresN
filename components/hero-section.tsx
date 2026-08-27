@@ -2,14 +2,14 @@ import { ArrowUpRight, Sparkles } from 'lucide-react'
 
 export function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden px-4 pb-20 pt-36 md:pt-44">
+    <section id="top" className="relative overflow-hidden px-4 pb-12 pt-32 md:pt-36">
       {/* Ambient glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-32 left-1/2 h-96 w-[42rem] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]"
       />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.15fr_0.85fr]">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1.15fr_0.85fr]">
         {/* Left: headline */}
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 font-mono text-xs text-muted-foreground">
@@ -17,34 +17,34 @@ export function HeroSection() {
             Disponible para proyectos selectos
           </span>
 
-          <h1 className="mt-6 text-pretty text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 text-pretty text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-5xl">
             Creo <span className="text-primary glow-text">MVPs y sistemas escalables</span> para
             negocios que necesitan resultados.
           </h1>
 
-          <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-4 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
             Soy Facu, ingeniero Full-Stack. Diseño arquitecturas resilientes y productos centrados
             en el usuario. Desde plataformas de alto tráfico hasta pipelines de automatización,
             transformo requerimientos complejos en sistemas que funcionan y perduran.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
               href="mailto:floresnfacundo@gmail.com"
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground glow-ring transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground glow-ring transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Trabajemos Juntos
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
             >
               Ver Proyectos
             </a>
           </div>
 
-          <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-4 border-t border-border pt-6 font-mono">
+          <dl className="mt-6 flex flex-wrap gap-x-10 gap-y-4 border-t border-border pt-4 font-mono">
             {[
               ['2', 'Proyectos entregados'],
               ['23', 'Años'],

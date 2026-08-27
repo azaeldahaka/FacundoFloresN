@@ -56,7 +56,7 @@
   --card-foreground: oklch(0.96 0.01 250);
   --popover: oklch(0.17 0.03 265);
   --popover-foreground: oklch(0.96 0.01 250);
-  --primary: oklch(0.78 0.16 210);
+  --primary: oklch(0.78 0.12 210);
   --primary-foreground: oklch(0.14 0.03 265);
   --secondary: oklch(0.24 0.035 265);
   --secondary-foreground: oklch(0.96 0.01 250);
@@ -82,7 +82,7 @@
   --sidebar-accent-foreground: oklch(0.96 0.01 250);
   --sidebar-border: oklch(0.72 0.14 210 / 15%);
   --sidebar-ring: oklch(0.78 0.16 210);
-  --glow: oklch(0.78 0.16 210);
+  --glow: oklch(0.78 0.12 210);
 }
 
 /* Light mode: keep a clean, restrained variant with the same accent */
@@ -129,6 +129,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    scrollbar-width: none;
+  }
 }
 
 @layer utilities {
@@ -138,6 +145,16 @@
     backdrop-filter: blur(14px) saturate(140%);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid var(--border);
+  }
+
+  /* Liquid Glass Dimmer for legibility */
+  .glass-dimmer {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
   }
 
   /* Neon glow helpers */
@@ -156,6 +173,9 @@
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.35s ease,
       border-color 0.35s ease;
+  }
+  .glow-hover:active {
+    transform: scale(0.98);
   }
   .glow-hover:hover {
     transform: translateY(-4px);

@@ -9,17 +9,25 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true)
-    setIsDark(document.documentElement.classList.contains('dark'))
+    const storedTheme = localStorage.getItem('theme')
+    const isLight = document.documentElement.classList.contains('light') || storedTheme === 'light'
+    setIsDark(!isLight)
+    if (isLight) {
+      document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
+    } else {
+      document.documentElement.classList.add('dark')
+    }
   }, [])
 
   function toggle() {
-    const next = !isDark
-    setIsDark(next)
+    const nextDark = !isDark
+    setIsDark(nextDark)
     const el = document.documentElement
-    el.classList.toggle('dark', next)
-    el.classList.toggle('light', !next)
+    el.classList.toggle('light', !nextDark)
+    el.classList.toggle('dark', nextDark)
     try {
-      localStorage.setItem('theme', next ? 'dark' : 'light')
+      localStorage.setItem('theme', nextDark ? 'dark' : 'light')
     } catch {}
   }
 
