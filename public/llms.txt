@@ -25,6 +25,7 @@
 - Acceso Demo: Usuario `admin@aulix.local` (o `alumno@gmail.com`), Contraseña `Password123!` (Admin: `Admin123!`).
 
 ### 2. ERP & E-Commerce - La Linda
+- Web en Producción (Demo): https://la-linda-app-production-5zyab2.laravel.cloud/login
 - Repositorio: https://github.com/MauricioLopezC/la-linda-app
 - Stack: Laravel 13, React, Inertia.js, PostgreSQL, Tailwind CSS, Vite.
 - Descripción: Sistema de gestión empresarial integral (ERP) y plataforma e-commerce para cadena de supermercados multisucursal. Incluye catálogo unificado, gestión multisucursal de stock/depósitos, módulo de compras y órdenes a proveedores, terminal de ventas (POS) con apertura/cierre de caja, facturación y tienda online sincronizada en tiempo real.

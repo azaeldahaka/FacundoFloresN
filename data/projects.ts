@@ -44,6 +44,7 @@ export const myProjects: Project[] = [
     description:
       "Diseño e implementación de un sistema de gestión empresarial integral (ERP) y plataforma e-commerce para una cadena de supermercados multisucursal. Módulos clave: Administración de catálogo unificado, gestión multisucursal de stock/depósitos, compras y órdenes a proveedores, terminal de ventas (POS) con apertura/cierre de caja, facturación y tienda online sincronizada en tiempo real.",
     techStack: ["Laravel 13", "React", "Inertia.js", "PostgreSQL", "Tailwind CSS", "Vite"],
+    url: "https://la-linda-app-production-5zyab2.laravel.cloud/login",
     githubUrl: "https://github.com/MauricioLopezC/la-linda-app",
     duration: "Agosto 2026 - Presente",
     demoCredentials: {
