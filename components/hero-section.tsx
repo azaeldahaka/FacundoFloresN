@@ -30,17 +30,26 @@ export function HeroSection() {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
-              href="mailto:floresnfacundo@gmail.com"
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground glow-ring transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              href="#contact"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground glow-ring transition-transform duration-150 ease-out hover:scale-[1.02] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Trabajemos Juntos
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-150 ease-out hover:border-primary/50 hover:text-primary active:scale-[0.97]"
             >
               Ver Proyectos
+            </a>
+            <a
+              href="https://www.linkedin.com/in/facundofloresn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-card/40 px-3.5 py-2.5 font-mono text-xs text-muted-foreground transition-all duration-150 ease-out hover:border-primary/40 hover:text-foreground active:scale-[0.97]"
+            >
+              <span>Ver Perfil / CV</span>
+              <ArrowUpRight className="h-3.5 w-3.5 text-primary" />
             </a>
           </div>
 

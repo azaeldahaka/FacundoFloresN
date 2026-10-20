@@ -29,7 +29,8 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight text-foreground">
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="grid h-8 w-8 place-items-center rounded-md border border-primary/40 bg-primary/10 text-primary glow-ring md:cursor-default"
+            aria-label="Abrir menú de navegación"
+            className="grid h-8 w-8 place-items-center rounded-md border border-primary/40 bg-primary/10 text-primary glow-ring transition-transform active:scale-90 md:cursor-default"
           >
             <Terminal className="h-4 w-4" />
           </button>
@@ -41,7 +42,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors duration-150 hover:text-primary active:scale-95"
             >
               {item.label}
             </a>
@@ -57,7 +58,7 @@ export function SiteHeader() {
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 aria-label={label}
-                className="grid h-9 w-9 place-items-center rounded-md text-muted-foreground transition-colors hover:text-primary"
+                className="grid h-9 w-9 place-items-center rounded-md text-muted-foreground transition-all duration-150 hover:text-primary active:scale-90"
               >
                 <Icon className="h-4 w-4" />
               </a>

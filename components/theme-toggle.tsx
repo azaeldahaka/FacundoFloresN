@@ -36,9 +36,13 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Toggle color theme"
-      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background/40 text-foreground transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background/40 text-foreground transition-all duration-150 hover:border-primary/50 hover:text-primary active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
-      {mounted && isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      {mounted && isDark ? (
+        <Sun className="h-4 w-4 transition-transform duration-200 rotate-0 hover:rotate-45" />
+      ) : (
+        <Moon className="h-4 w-4 transition-transform duration-200 rotate-0 hover:-rotate-12" />
+      )}
       <span className="sr-only">Toggle theme</span>
     </button>
   )

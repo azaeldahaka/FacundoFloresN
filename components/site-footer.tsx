@@ -30,7 +30,7 @@ export function SiteFooter() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="mailto:floresnfacundo@gmail.com"
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground glow-ring transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground glow-ring transition-transform duration-150 hover:scale-[1.02] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Trabajemos Juntos
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -43,7 +43,7 @@ export function SiteFooter() {
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   aria-label={label}
-                  className="grid h-11 w-11 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                  className="grid h-11 w-11 place-items-center rounded-lg border border-border text-muted-foreground transition-all duration-150 hover:border-primary/50 hover:text-primary active:scale-90"
                 >
                   <Icon className="h-4 w-4" />
                 </a>

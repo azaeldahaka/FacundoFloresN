@@ -132,7 +132,7 @@ export function ProjectsSection() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-colors hover:text-primary"
+                      className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-all duration-150 hover:text-primary active:scale-95"
                     >
                       Ver en Producción
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -143,7 +143,7 @@ export function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-colors hover:text-primary"
+                      className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-all duration-150 hover:text-primary active:scale-95"
                     >
                       Ver en GitHub
                       <svg
