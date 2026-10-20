@@ -1,13 +1,16 @@
 import { Terminal } from 'lucide-react'
 
 const TECHNOLOGIES = [
-  "React 18",
+  "Next.js",
+  "React",
   "TypeScript",
+  "Laravel",
+  "PostgreSQL",
+  "Prisma",
   "Tailwind CSS",
+  "Docker",
   "Supabase",
-  "SQL",
   "Python",
-  "FilamentPHP"
 ]
 
 export function TechSection() {

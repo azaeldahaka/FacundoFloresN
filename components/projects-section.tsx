@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2, ImageIcon, Terminal } from 'lucide-react'
+import { ArrowUpRight, Code2, ImageIcon, KeyRound, Terminal } from 'lucide-react'
 import { myProjects } from '@/data/projects'
 
 export function ProjectsSection() {
@@ -74,6 +74,44 @@ export function ProjectsSection() {
                     </li>
                   ))}
                 </ul>
+
+                {project.demoCredentials && (
+                  <div className="mt-4 rounded-lg border border-border/70 bg-background/50 p-3 font-mono text-xs backdrop-blur-sm">
+                    <div className="flex items-center gap-1.5 font-medium text-primary">
+                      <KeyRound className="h-3.5 w-3.5" />
+                      <span>Credenciales de prueba / Demo:</span>
+                    </div>
+                    <div className="mt-2 space-y-1 text-muted-foreground">
+                      {project.demoCredentials.email && (
+                        <div>
+                          <span className="text-foreground/70">Usuario:</span>{' '}
+                          <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
+                            {project.demoCredentials.email}
+                          </code>
+                        </div>
+                      )}
+                      {project.demoCredentials.password && (
+                        <div>
+                          <span className="text-foreground/70">Clave:</span>{' '}
+                          <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
+                            {project.demoCredentials.password}
+                          </code>
+                        </div>
+                      )}
+                      {project.demoCredentials.role && (
+                        <div>
+                          <span className="text-foreground/70">Rol:</span>{' '}
+                          <span className="text-primary">{project.demoCredentials.role}</span>
+                        </div>
+                      )}
+                      {project.demoCredentials.note && (
+                        <p className="pt-1 text-[11px] leading-relaxed text-muted-foreground/80">
+                          {project.demoCredentials.note}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
 
                 <div className="mt-5 flex items-center gap-6">
                   {project.url && (
