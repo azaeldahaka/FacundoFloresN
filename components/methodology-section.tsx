@@ -1,4 +1,4 @@
-import { Users, Zap } from 'lucide-react'
+import { Layers, Users, Zap } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 type Pillar = {
@@ -11,17 +11,24 @@ type Pillar = {
 const PILLARS: Pillar[] = [
   {
     Icon: Users,
-    title: 'Arquitectura centrada en el Usuario',
+    title: 'Arquitectura Centrada en el Usuario',
     description:
-      'En cada sistema que construyo, priorizo la eficiencia operativa. Durante el desarrollo de un sistema de gestión de reservas hoteleras, mapeé minuciosamente cada flujo: desde la experiencia intuitiva del huésped al reservar, hasta la velocidad de carga de datos para el recepcionista. Resuelvo los problemas técnicos uno por uno.',
+      'En cada sistema priorizo la eficiencia operativa. Durante el desarrollo del sistema hotelero Horizonte Suites, mapeé cada flujo: desde la experiencia intuitiva del huésped al reservar, hasta la velocidad de carga de datos del recepcionista.',
     points: ['Flujos guest & admin', 'Acceso basado en roles', 'Auditoría de fricción'],
+  },
+  {
+    Icon: Layers,
+    title: 'Ingeniería Robusta & Arquitectura en Capas',
+    description:
+      'En plataformas de alta complejidad como Aulix (gestión académica) y La Linda (ERP multisucursal), aplico Spec-Driven Development (SDD), separación en 4 capas (UI, Actions, Service, Repository), control de acceso estricto (RBAC) y tests automatizados.',
+    points: ['Spec-Driven Development', 'Arquitectura 4 Capas', 'RBAC & Seguridad', 'Tests Automatizados'],
   },
   {
     Icon: Zap,
     title: 'Estandarización y Rendimiento',
     description:
-      'En proyectos de e-commerce como Aromaas Decants, investigo y aplico las mejores prácticas de la industria en UX/UI. Analizo el comportamiento del cliente final para diseñar interfaces que conviertan, manteniendo el código limpio y la infraestructura optimizada.',
-    points: ['Mejores prácticas UX/UI', 'Código limpio', 'Infraestructura optimizada'],
+      'En plataformas e-commerce y SaaS como Aromaas Decants, investigo y aplico las mejores prácticas de la industria en UX/UI. Analizo el comportamiento del usuario para diseñar interfaces fluidas manteniendo el código desacoplado y optimizado.',
+    points: ['Mejores prácticas UX/UI', 'Código desacoplado', 'Infraestructura optimizada'],
   },
 ]
 
@@ -42,7 +49,7 @@ export function MethodologySection() {
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-3">
           {PILLARS.map(({ Icon, title, description, points }) => (
             <article
               key={title}

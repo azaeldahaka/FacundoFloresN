@@ -36,20 +36,22 @@ export function ProjectsSection() {
                   )}
                 </div>
               ) : (
-                <div className="relative flex aspect-video w-full items-center justify-center border-b border-border/10 bg-secondary/10 overflow-hidden">
-                  {/* Subtle pattern for the background */}
-                  <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
-                  {project.inDevelopment ? (
-                    <div className="relative flex flex-col items-center gap-3 text-muted-foreground">
-                      <Terminal className="h-10 w-10 text-primary/70" />
-                      <span className="font-mono text-sm uppercase tracking-wider text-primary/90 font-medium">En Desarrollo</span>
-                    </div>
-                  ) : (
-                    <div className="relative flex flex-col items-center gap-3 text-muted-foreground/40">
-                      <ImageIcon className="h-10 w-10" />
-                      <span className="font-mono text-xs tracking-wider">Sin vista previa</span>
-                    </div>
-                  )}
+                <div className="relative flex aspect-video w-full flex-col items-center justify-center border-b border-border/15 bg-secondary/20 p-6 overflow-hidden">
+                  {/* Subtle technical grid pattern */}
+                  <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px]" />
+                  <div className="relative flex flex-col items-center gap-2.5 text-center">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl border border-primary/30 bg-primary/10 text-primary glow-ring">
+                      <Terminal className="h-6 w-6" />
+                    </span>
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-primary">
+                      Arquitectura Empresarial
+                    </span>
+                    <span className="font-mono text-[11px] text-muted-foreground/80">
+                      {project.id === '4'
+                        ? 'Next.js 16 · Clean Architecture · RBAC · Tests'
+                        : 'Laravel 13 · React · Inertia · PostgreSQL'}
+                    </span>
+                  </div>
                 </div>
               )}
               <div className="flex flex-1 flex-col p-6">

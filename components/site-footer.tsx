@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail, MessageCircle } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './brand-icons'
+import { CopyButton } from './copy-button'
 
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/azaeldahaka', Icon: GithubIcon },
@@ -35,6 +36,10 @@ export function SiteFooter() {
               Trabajemos Juntos
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
+            <div className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/50 px-3 py-2 font-mono text-xs text-muted-foreground backdrop-blur-sm">
+              <span className="hidden sm:inline text-foreground/80">floresnfacundo@gmail.com</span>
+              <CopyButton value="floresnfacundo@gmail.com" label="email" />
+            </div>
             <div className="flex items-center gap-1">
               {SOCIALS.map(({ label, href, Icon }) => (
                 <a
