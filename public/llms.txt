@@ -1,0 +1,43 @@
+# Facundo Flores (Facu) — Full-Stack Engineer
+
+> Ingeniero Full-Stack radicado en Salta, Argentina. Especializado en el diseño y desarrollo de arquitecturas resilientes, sistemas de gestión empresarial (ERP, SaaS) y aplicaciones web modernas de alto rendimiento con Next.js, React, Laravel y PostgreSQL.
+
+## Perfil y Contacto
+- Nombre: Facundo Flores
+- Rol: Ingeniero Full-Stack & Estudiante Avanzado de Ingeniería Informática en UCASAL
+- Ubicación: Salta, Argentina (Zona horaria: UTC-3)
+- Email: floresnfacundo@gmail.com
+- LinkedIn: https://www.linkedin.com/in/facundofloresn/
+- GitHub: https://github.com/azaeldahaka
+- WhatsApp: https://wa.me/5493874431282
+
+## Tecnologías Principales
+- Frontend: Next.js (App Router), React 18 / 19, TypeScript, Tailwind CSS, Base UI, Shadcn/ui.
+- Backend: Laravel 13, Node.js, Python, PostgreSQL, SQLite, Prisma ORM, SQL.
+- Arquitectura & DevOps: Docker, Git / GitHub, Arquitectura en 4 Capas, Spec-Driven Development (SDD), RBAC, REST APIs, Vitest, Pest.
+
+## Proyectos Destacados
+
+### 1. Aulix — Sistema de Gestión Académica & Operativa
+- Repositorio: https://github.com/jfNatanahel/aulix-ing-sw
+- Stack: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL, Docker, Tailwind CSS, Recharts.
+- Descripción: Plataforma integral para centros de atención académica, turnos y administración operativa. Desarrollado con arquitectura limpia en 4 capas y metodología Spec-Driven Development (SDD). Incluye control de accesos granular (RBAC), legajos de alumnos, asignación y cupos de aulas, disponibilidad y liquidación docente, calendario multidimensional interactivo, gestión de cobros, comprobantes y reportes gerenciales en tiempo real.
+- Acceso Demo: Usuario `admin@aulix.local` (o `alumno@gmail.com`), Contraseña `Password123!` (Admin: `Admin123!`).
+
+### 2. ERP & E-Commerce - La Linda
+- Repositorio: https://github.com/MauricioLopezC/la-linda-app
+- Stack: Laravel 13, React, Inertia.js, PostgreSQL, Tailwind CSS, Vite.
+- Descripción: Sistema de gestión empresarial integral (ERP) y plataforma e-commerce para cadena de supermercados multisucursal. Incluye catálogo unificado, gestión multisucursal de stock/depósitos, módulo de compras y órdenes a proveedores, terminal de ventas (POS) con apertura/cierre de caja, facturación y tienda online sincronizada en tiempo real.
+- Acceso Demo: Usuario `compras@example.com`, Contraseña `aguanteboca`.
+
+### 3. Aromaas Decants
+- Web en Producción: https://aromaas-decants.vercel.app
+- Repositorio: https://github.com/azaeldahaka/AromaasDecants
+- Stack: React 18, TypeScript, Vercel.
+- Descripción: Configuración de dominio y plataforma e-commerce con catálogo interactivo y optimización de rendimiento.
+
+### 4. Hotel Horizonte
+- Web en Producción: https://horizontesuites.netlify.app/
+- Repositorio: https://github.com/azaeldahaka/Hotel-Horizonte-Suites
+- Stack: React 18, TypeScript, Tailwind CSS, Supabase, Recharts.
+- Descripción: Sistema de gestión hotelera full stack con prevención de solapamientos en reservas, autenticación híbrida con roles y dashboard estadístico en tiempo real.
