@@ -8,8 +8,8 @@ import { GithubIcon, LinkedinIcon } from './brand-icons'
 const NAV = [
   { label: 'Sobre Mí', href: '#about' },
   { label: 'Metodología', href: '#methodology' },
+  { label: 'Tecnologías', href: '#stack' },
   { label: 'Proyectos', href: '#projects' },
-  { label: 'Servicios', href: '#services' },
   { label: 'Contacto', href: '#contact' },
 ]
 

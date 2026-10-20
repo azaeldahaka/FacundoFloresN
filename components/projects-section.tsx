@@ -1,5 +1,6 @@
 import { ArrowUpRight, Code2, ImageIcon, KeyRound, Terminal } from 'lucide-react'
 import { myProjects } from '@/data/projects'
+import { CopyButton } from './copy-button'
 
 export function ProjectsSection() {
   return (
@@ -81,21 +82,33 @@ export function ProjectsSection() {
                       <KeyRound className="h-3.5 w-3.5" />
                       <span>Credenciales de prueba / Demo:</span>
                     </div>
-                    <div className="mt-2 space-y-1 text-muted-foreground">
+                    <div className="mt-2 space-y-2 text-muted-foreground">
                       {project.demoCredentials.email && (
-                        <div>
-                          <span className="text-foreground/70">Usuario:</span>{' '}
-                          <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
-                            {project.demoCredentials.email}
-                          </code>
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <span className="text-foreground/70">Usuario:</span>{' '}
+                            <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
+                              {project.demoCredentials.email}
+                            </code>
+                          </div>
+                          <CopyButton
+                            value={project.demoCredentials.copyEmail || project.demoCredentials.email}
+                            label="usuario"
+                          />
                         </div>
                       )}
                       {project.demoCredentials.password && (
-                        <div>
-                          <span className="text-foreground/70">Clave:</span>{' '}
-                          <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
-                            {project.demoCredentials.password}
-                          </code>
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <span className="text-foreground/70">Clave:</span>{' '}
+                            <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
+                              {project.demoCredentials.password}
+                            </code>
+                          </div>
+                          <CopyButton
+                            value={project.demoCredentials.copyPassword || project.demoCredentials.password}
+                            label="contraseña"
+                          />
                         </div>
                       )}
                       {project.demoCredentials.role && (

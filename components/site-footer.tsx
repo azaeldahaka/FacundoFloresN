@@ -10,7 +10,7 @@ const SOCIALS = [
 
 export function SiteFooter() {
   return (
-    <footer className="px-4 pb-10 pt-8">
+    <footer id="contact" className="scroll-mt-24 px-4 pb-10 pt-8">
       <div className="mx-auto max-w-6xl">
         {/* CTA panel */}
         <div className="relative overflow-hidden rounded-2xl glass p-8 md:p-14">

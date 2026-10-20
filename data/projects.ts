@@ -3,6 +3,8 @@ export type DemoCredentials = {
   password?: string
   role?: string
   note?: string
+  copyEmail?: string
+  copyPassword?: string
 }
 
 export type Project = {
@@ -30,6 +32,8 @@ export const myProjects: Project[] = [
     demoCredentials: {
       email: "admin@aulix.local / alumno@gmail.com",
       password: "Password123! (Admin: Admin123!)",
+      copyEmail: "admin@aulix.local",
+      copyPassword: "Password123!",
       role: "Director, Alumno, Profesor, Recepción",
       note: "Contraseña universal: Password123!. Admite autenticación indistinta mediante Email, Nombre de Usuario o DNI.",
     },
@@ -45,6 +49,8 @@ export const myProjects: Project[] = [
     demoCredentials: {
       email: "compras@example.com",
       password: "aguanteboca",
+      copyEmail: "compras@example.com",
+      copyPassword: "aguanteboca",
       role: "Compras / Gestión Operativa",
       note: "Acceso asignado al módulo de compras, control de proveedores y emisión de órdenes.",
     },

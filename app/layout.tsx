@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geist.variable} ${geistMono.variable} bg-background`}
       suppressHydrationWarning
     >

@@ -125,9 +125,17 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  button, a {
+    touch-action: manipulation;
+  }
+  button {
+    user-select: none;
+    -webkit-user-select: none;
   }
   /* Hide scrollbar */
   ::-webkit-scrollbar {
@@ -135,6 +143,7 @@
   }
   html {
     scrollbar-width: none;
+    scroll-behavior: smooth;
   }
 }
 
@@ -177,12 +186,14 @@
   .glow-hover:active {
     transform: scale(0.98);
   }
-  .glow-hover:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in oklch, var(--glow) 55%, transparent);
-    box-shadow:
-      0 0 0 1px color-mix(in oklch, var(--glow) 45%, transparent),
-      0 12px 40px -12px color-mix(in oklch, var(--glow) 55%, transparent);
+  @media (hover: hover) and (pointer: fine) {
+    .glow-hover:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in oklch, var(--glow) 55%, transparent);
+      box-shadow:
+        0 0 0 1px color-mix(in oklch, var(--glow) 45%, transparent),
+        0 12px 40px -12px color-mix(in oklch, var(--glow) 55%, transparent);
+    }
   }
 
   /* Starfield + grid background */
