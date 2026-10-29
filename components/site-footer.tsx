@@ -1,6 +1,10 @@
+'use client'
+
 import { ArrowUpRight, Mail, MessageCircle } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './brand-icons'
 import { CopyButton } from './copy-button'
+import { useLanguage } from '@/lib/i18n'
+import { translations } from '@/data/translations'
 
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/azaeldahaka', Icon: GithubIcon },
@@ -10,6 +14,9 @@ const SOCIALS = [
 ]
 
 export function SiteFooter() {
+  const { lang } = useLanguage()
+  const t = translations[lang].footer
+
   return (
     <footer id="contact" className="scroll-mt-24 px-4 pb-10 pt-8">
       <div className="mx-auto max-w-6xl">
@@ -19,25 +26,22 @@ export function SiteFooter() {
             aria-hidden="true"
             className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-[100px]"
           />
-          <p className="font-mono text-xs uppercase tracking-widest text-primary">Contacto</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">{t.eyebrow}</p>
           <h2 className="mt-3 max-w-2xl text-pretty text-3xl font-semibold tracking-tight text-foreground md:text-4xl">
-            ¿Listo para construir algo que escale?
+            {t.heading}
           </h2>
-          <p className="mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Abierto a colaboraciones freelance y proyectos selectos. Respondo cada mensaje
-            en menos de 24 horas.
-          </p>
+          <p className="mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">{t.subtitle}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="mailto:floresnfacundo@gmail.com"
               className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground glow-ring transition-transform duration-150 hover:scale-[1.02] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              Trabajemos Juntos
+              {t.ctaPrimary}
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
             <div className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/50 px-3 py-2 font-mono text-xs text-muted-foreground backdrop-blur-sm">
-              <span className="hidden sm:inline text-foreground/80">floresnfacundo@gmail.com</span>
+              <span className="hidden text-foreground/80 sm:inline">floresnfacundo@gmail.com</span>
               <CopyButton value="floresnfacundo@gmail.com" label="email" />
             </div>
             <div className="flex items-center gap-1">
@@ -59,8 +63,10 @@ export function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-border pt-6 font-mono text-xs text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Facundo — Todos los sistemas operativos.</p>
-          <p>Full-Stack Engineer · Salta, Argentina</p>
+          <p>
+            © {new Date().getFullYear()} {t.copyrightSuffix}
+          </p>
+          <p>{t.tagline}</p>
         </div>
       </div>
     </footer>

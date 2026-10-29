@@ -1,29 +1,33 @@
-import { ArrowUpRight, Code2, ImageIcon, KeyRound, Terminal } from 'lucide-react'
-import { myProjects } from '@/data/projects'
+'use client'
+
+import { ArrowUpRight, KeyRound, Terminal } from 'lucide-react'
+import { getProjects } from '@/data/projects'
+import { useLanguage } from '@/lib/i18n'
+import { translations } from '@/data/translations'
 import { CopyButton } from './copy-button'
 
 export function ProjectsSection() {
+  const { lang } = useLanguage()
+  const t = translations[lang].projects
+  const projects = getProjects(lang)
+
   return (
     <section id="projects" className="scroll-mt-24 px-4 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-widest text-primary">04 / Proyectos</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-primary">{t.eyebrow}</p>
           <h2 className="mt-2 text-pretty text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-            Proyectos seleccionados en producción
+            {t.heading}
           </h2>
-          <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-            Sistemas que he diseñado, desarrollado y desplegado de punta a punta.
-          </p>
+          <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">{t.subtitle}</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {myProjects.map((project) => (
-            <article
-              key={project.id}
-              className="group flex flex-col overflow-hidden rounded-xl glass glow-hover"
-            >
+          {projects.map((project) => (
+            <article key={project.id} className="group flex flex-col overflow-hidden rounded-xl glass glow-hover">
               {project.imageUrl ? (
                 <div className="relative flex aspect-video w-full overflow-hidden border-b border-border/20">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.imageUrl}
                     alt={`Preview of ${project.title}`}
@@ -31,20 +35,20 @@ export function ProjectsSection() {
                   />
                   {project.inDevelopment && (
                     <div className="absolute left-4 top-4 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm backdrop-blur-md">
-                      En Desarrollo
+                      {t.inDevelopment}
                     </div>
                   )}
                 </div>
               ) : (
-                <div className="relative flex aspect-video w-full flex-col items-center justify-center border-b border-border/15 bg-secondary/20 p-6 overflow-hidden">
+                <div className="relative flex aspect-video w-full flex-col items-center justify-center overflow-hidden border-b border-border/15 bg-secondary/20 p-6">
                   {/* Subtle technical grid pattern */}
-                  <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] opacity-[0.05] [background-size:20px_20px]" />
                   <div className="relative flex flex-col items-center gap-2.5 text-center">
                     <span className="grid h-12 w-12 place-items-center rounded-xl border border-primary/30 bg-primary/10 text-primary glow-ring">
                       <Terminal className="h-6 w-6" />
                     </span>
                     <span className="font-mono text-xs font-semibold uppercase tracking-wider text-primary">
-                      Arquitectura Empresarial
+                      {t.enterpriseArchitecture}
                     </span>
                     <span className="font-mono text-[11px] text-muted-foreground/80">
                       {project.id === '4'
@@ -58,22 +62,20 @@ export function ProjectsSection() {
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-lg font-semibold text-foreground">{project.title}</h3>
                   {project.duration && (
-                    <span className="text-xs font-medium text-muted-foreground bg-secondary/50 px-2 py-1 rounded-md w-fit">
+                    <span className="w-fit rounded-md bg-secondary/50 px-2 py-1 text-xs font-medium text-muted-foreground">
                       {project.duration}
                     </span>
                   )}
                 </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
 
                 <ul className="mt-4 flex flex-wrap gap-2">
-                  {project.techStack.map((t) => (
+                  {project.techStack.map((tech) => (
                     <li
-                      key={t}
+                      key={tech}
                       className="rounded-md border border-primary/25 bg-primary/10 px-2 py-0.5 font-mono text-xs text-primary"
                     >
-                      {t}
+                      {tech}
                     </li>
                   ))}
                 </ul>
@@ -82,40 +84,40 @@ export function ProjectsSection() {
                   <div className="mt-4 rounded-lg border border-border/70 bg-background/50 p-3 font-mono text-xs backdrop-blur-sm">
                     <div className="flex items-center gap-1.5 font-medium text-primary">
                       <KeyRound className="h-3.5 w-3.5" />
-                      <span>Credenciales de prueba / Demo:</span>
+                      <span>{t.demoHeader}</span>
                     </div>
                     <div className="mt-2 space-y-2 text-muted-foreground">
                       {project.demoCredentials.email && (
                         <div className="flex flex-wrap items-center justify-between gap-2">
                           <div>
-                            <span className="text-foreground/70">Usuario:</span>{' '}
+                            <span className="text-foreground/70">{t.userLabel}</span>{' '}
                             <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
                               {project.demoCredentials.email}
                             </code>
                           </div>
                           <CopyButton
                             value={project.demoCredentials.copyEmail || project.demoCredentials.email}
-                            label="usuario"
+                            label={t.copyUserAria}
                           />
                         </div>
                       )}
                       {project.demoCredentials.password && (
                         <div className="flex flex-wrap items-center justify-between gap-2">
                           <div>
-                            <span className="text-foreground/70">Clave:</span>{' '}
+                            <span className="text-foreground/70">{t.passwordLabel}</span>{' '}
                             <code className="rounded bg-muted/60 px-1 py-0.5 text-foreground">
                               {project.demoCredentials.password}
                             </code>
                           </div>
                           <CopyButton
                             value={project.demoCredentials.copyPassword || project.demoCredentials.password}
-                            label="contraseña"
+                            label={t.copyPassAria}
                           />
                         </div>
                       )}
                       {project.demoCredentials.role && (
                         <div>
-                          <span className="text-foreground/70">Rol:</span>{' '}
+                          <span className="text-foreground/70">{t.roleLabel}</span>{' '}
                           <span className="text-primary">{project.demoCredentials.role}</span>
                         </div>
                       )}
@@ -136,7 +138,7 @@ export function ProjectsSection() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-all duration-150 hover:text-primary active:scale-95"
                     >
-                      {project.demoCredentials ? 'Probar en Vivo' : 'Ver en Producción'}
+                      {project.demoCredentials ? t.liveDemo : t.viewProduction}
                       <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
                   )}
@@ -147,7 +149,7 @@ export function ProjectsSection() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 self-start text-sm font-medium text-foreground transition-all duration-150 hover:text-primary active:scale-95"
                     >
-                      Ver en GitHub
+                      {t.viewGithub}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"

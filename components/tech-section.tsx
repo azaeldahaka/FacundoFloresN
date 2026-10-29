@@ -1,19 +1,26 @@
+'use client'
+
 import { Terminal } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n'
+import { translations } from '@/data/translations'
 
 const TECHNOLOGIES = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Laravel",
-  "PostgreSQL",
-  "Prisma",
-  "Tailwind CSS",
-  "Docker",
-  "Supabase",
-  "Python",
+  'Next.js',
+  'React',
+  'TypeScript',
+  'Laravel',
+  'PostgreSQL',
+  'Prisma',
+  'Tailwind CSS',
+  'Docker',
+  'Supabase',
+  'Python',
 ]
 
 export function TechSection() {
+  const { lang } = useLanguage()
+  const t = translations[lang].tech
+
   return (
     <section id="stack" className="relative scroll-mt-24 px-4 py-16 sm:px-6 md:py-20">
       <div className="mx-auto max-w-6xl">
@@ -22,9 +29,9 @@ export function TechSection() {
             <Terminal className="h-6 w-6" />
           </div>
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">03 / Stack</p>
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">{t.eyebrow}</p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-              Tecnologías y Herramientas
+              {t.heading}
             </h2>
           </div>
         </div>
@@ -35,9 +42,7 @@ export function TechSection() {
               key={tech}
               className="group relative overflow-hidden rounded-xl border border-border glass px-6 py-4 transition-all hover:border-primary/50 hover:bg-primary/5"
             >
-              <span className="relative z-10 font-mono text-sm font-medium text-foreground">
-                {tech}
-              </span>
+              <span className="relative z-10 font-mono text-sm font-medium text-foreground">{tech}</span>
             </div>
           ))}
         </div>
